@@ -10,17 +10,17 @@
                 </a>
             </th>
         </tr>
-        <tr *ngFor="let tarefa of tarefas" [class.btn-success]="tarefa.concluida">
-            <td [tarefaConcluida]="tarefa.concluida"
+        <tr *ngFor="let tarefa of tarefas" [class.bg-light]="tarefa.concluida">
+            <td style="width: 70%;" [tarefaConcluida]="tarefa.concluida"
             >{{tarefa.nome}}</td>
             <td style="width: 70px;" class="text-center">
                 <input (click)="alterarStatus(tarefa)" type="checkbox" [value]="tarefa.id" [checked]="tarefa.concluida">
             </td>
-            <td class="text-center" style="width: 200px;">
-                <a [routerLink]="['/tarefas/editar', tarefa.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+            <td class="text-center">
+                <a [routerLink]="['/tarefas/editar', tarefa.id]" title="Editar" alt="Editar" class="m-1 btn btn-xs btn-info">
                     <i class="fa fa-pencil" aria-hidden="true"></i>Editar
                 </a>
-                <a (click)="remover" href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+                <a (click)="remover" href="#" title="Remover" alt="Remover" class="m-1 btn btn-xs btn-danger">
                     <i class="fa fa-trash" aria-hidden="true"></i>Remover
                 </a>
             </td>
